@@ -1,0 +1,6 @@
+[submodule "Buruberi-Backend"]
+	path = Buruberi-Backend
+	url = https://github.com/Pjurkowsky/Buruberi-Backend
+[submodule "Buruberi-Frontend"]
+	path = Buruberi-Frontend
+	url = https://github.com/Pjurkowsky/Buruberi-Frontend
