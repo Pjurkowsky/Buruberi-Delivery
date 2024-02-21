@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: buruberi
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+  api:
+    build: ./Buruberi-Backend
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  web:
+    build: ./Buruberi-Frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./Buruberi-Frontend:/app
